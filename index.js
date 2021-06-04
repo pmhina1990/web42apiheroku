@@ -17,6 +17,9 @@ console.log('Port is ', PORT)
 server.get('/api',(req,res)=>{
     res.json({message : `${process.env.COHORT}`})
 })
+server.use((req, res)=>{
+    res.status(404).json({message:'Not found sorry'})
+})
 
 server.listen(PORT, ()=>{
     console.log(`Listening on ${PORT}`)
